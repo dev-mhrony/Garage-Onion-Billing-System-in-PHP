@@ -12,7 +12,7 @@ for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@
 $localhost = "localhost";
 $username = "root";
 $password = "";
-$dbname = "garagedb";
+$dbname = "garage_system";
 //$store_url = "http://localhost/'Folder Name'/";
 // db connection
 $connect = new mysqli($localhost, $username, $password, $dbname);

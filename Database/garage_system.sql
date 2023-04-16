@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 08, 2022 at 05:53 AM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.1.26
+-- Generation Time: Apr 16, 2023 at 10:34 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.1.17
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -31,9 +30,9 @@ SET time_zone = "+00:00";
 CREATE TABLE `brands` (
   `brand_id` int(11) NOT NULL,
   `brand_name` varchar(255) NOT NULL,
-  `brand_active` int(11) NOT NULL DEFAULT '0',
-  `brand_status` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `brand_active` int(11) NOT NULL DEFAULT 0,
+  `brand_status` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `brands`
@@ -54,9 +53,9 @@ INSERT INTO `brands` (`brand_id`, `brand_name`, `brand_active`, `brand_status`) 
 CREATE TABLE `categories` (
   `categories_id` int(11) NOT NULL,
   `categories_name` varchar(255) NOT NULL,
-  `categories_active` int(11) NOT NULL DEFAULT '0',
-  `categories_status` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `categories_active` int(11) NOT NULL DEFAULT 0,
+  `categories_status` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `categories`
@@ -88,14 +87,14 @@ CREATE TABLE `manage_website` (
   `login_logo` text NOT NULL,
   `invoice_logo` text NOT NULL,
   `background_login_image` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `manage_website`
 --
 
 INSERT INTO `manage_website` (`id`, `title`, `short_title`, `logo`, `footer`, `currency_code`, `currency_symbol`, `login_logo`, `invoice_logo`, `background_login_image`) VALUES
-(1, 'Orange Station', '9090909090', 'logo.jpg', 'Admin PanelÂ ', 'Shivaji Nagar, Nashik', 'â‚¹', 'logo.jpg', 'logo.jpg', 'service.jpg');
+(1, 'Garage Onion', '+8801608445456', 'logo.png', 'Admin Code Camp BD', 'Bogura,Rajshahi,Bangladesh', '$', 'logo.png', 'logo.png', '50e5f957acf99da450d71406a55bfcb1.jpg');
 
 -- --------------------------------------------------------
 
@@ -125,9 +124,9 @@ CREATE TABLE `orders` (
   `payment_status` int(11) NOT NULL,
   `payment_place` int(11) NOT NULL,
   `gstn` varchar(255) NOT NULL,
-  `order_status` int(11) NOT NULL DEFAULT '0',
+  `order_status` int(11) NOT NULL DEFAULT 0,
   `user_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `orders`
@@ -145,13 +144,13 @@ INSERT INTO `orders` (`order_id`, `order_date`, `client_name`, `client_contact`,
 
 CREATE TABLE `order_item` (
   `order_item_id` int(11) NOT NULL,
-  `order_id` int(11) NOT NULL DEFAULT '0',
-  `product_id` int(11) NOT NULL DEFAULT '0',
+  `order_id` int(11) NOT NULL DEFAULT 0,
+  `product_id` int(11) NOT NULL DEFAULT 0,
   `quantity` varchar(255) NOT NULL,
   `rate` varchar(255) NOT NULL,
   `total` varchar(255) NOT NULL,
-  `order_item_status` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `order_item_status` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `order_item`
@@ -178,9 +177,9 @@ CREATE TABLE `product` (
   `categories_id` int(11) NOT NULL,
   `quantity` varchar(255) NOT NULL,
   `rate` varchar(255) NOT NULL,
-  `active` int(11) NOT NULL DEFAULT '0',
-  `status` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `active` int(11) NOT NULL DEFAULT 0,
+  `status` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `product`
@@ -205,9 +204,9 @@ CREATE TABLE `tbl_client` (
   `mob_no` varchar(150) NOT NULL,
   `reffering` varchar(150) NOT NULL,
   `address` varchar(250) NOT NULL,
-  `created_date_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `created_date_time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `delete_status` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_client`
@@ -231,7 +230,7 @@ CREATE TABLE `tbl_email_config` (
   `mail_username` varchar(50) NOT NULL,
   `mail_password` varchar(30) NOT NULL,
   `mail_encrypt` varchar(300) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -244,14 +243,14 @@ CREATE TABLE `users` (
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`user_id`, `username`, `password`, `email`) VALUES
-(1, 'mayuri.infospace@gmail.com', 'cd92a26534dba48cd785cdcc0b3e6bd1', 'mayuri.infospace@gmail.com');
+(1, 'codecampbdofficial@gmail.com', '66607ecca78f8d851be7d8cd8779168f', 'mayuri.infospace@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -367,7 +366,7 @@ ALTER TABLE `tbl_email_config`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
