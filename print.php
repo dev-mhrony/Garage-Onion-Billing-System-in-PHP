@@ -8,6 +8,13 @@ for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@
 * Visit My Website : developerrony.com
 */ -->
 
+<style>
+    .preloader{
+        display: none;
+    }
+
+</style>
+
 <?php 
 include('./constant/connect.php');?>
  
