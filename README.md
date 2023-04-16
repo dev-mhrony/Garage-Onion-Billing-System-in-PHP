@@ -13,4 +13,10 @@ Garage Onion Billing System in PHP
 ### Database Name
 - garage_system
 
+
+### Admin Login Info
+ - User Name : codecampbdofficial@gmail.com
+ - Password  : <a href = "#">Watch This Full Video</a>
+
+
 ### Preview
