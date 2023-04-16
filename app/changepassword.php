@@ -1,4 +1,3 @@
-
 <?php include('./constant/layout/head.php');?>
 <!--  Author Name- Mayuri K. 
  for any PHP, Codeignitor, Laravel OR Python work contact me at mayuri.infospace@gmail.com  
