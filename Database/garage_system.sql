@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2023 at 10:34 AM
+-- Generation Time: Apr 16, 2023 at 07:46 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `garagedb`
+-- Database: `garage_system`
 --
 
 -- --------------------------------------------------------
@@ -250,7 +250,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `username`, `password`, `email`) VALUES
-(1, 'codecampbdofficial@gmail.com', '66607ecca78f8d851be7d8cd8779168f', 'mayuri.infospace@gmail.com');
+(1, 'codecampbdofficial@gmail.com', '66607ecca78f8d851be7d8cd8779168f', 'codecampbdofficial@gmail.com');
 
 --
 -- Indexes for dumped tables
