@@ -3,7 +3,7 @@
 $localhost = "localhost";
 $username = "root";
 $password = "";
-$dbname = "garagedb";
+$dbname = "garage_system";
 // db connection
 $connect = new mysqli($localhost, $username, $password, $dbname);
 // check connection
